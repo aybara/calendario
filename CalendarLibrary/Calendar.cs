@@ -19,7 +19,7 @@ namespace CalendarLibrary
         public List<Holiday> Holidays { get; }
         public Calendar(List<WorkDay> workDays, List<Holiday> holidays)
         {
-            WorkDays = workDays;
+            WorkDays = workDays.OrderBy(wd => wd.DayOfWeek).ToList();
             Holidays = holidays;
         }
         public Calendar()
@@ -45,6 +45,7 @@ namespace CalendarLibrary
             if(!WorkDays.Contains(workDay) && !WorkDays.Where(w => w.DayOfWeek == workDay.DayOfWeek).Any())
             {
                 WorkDays.Add(workDay);
+                //WorkDays.OrderBy(wd => wd.DayOfWeek).ToList();
             }
         }
         public void UnsubscribeWorkDay(WorkDay workDay)
