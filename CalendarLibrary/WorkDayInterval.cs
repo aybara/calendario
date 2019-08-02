@@ -2,7 +2,7 @@
 
 namespace CalendarLibrary
 {
-    public class WorkDayBreak
+    public class WorkDayInterval
     {
         public TimeSpan Start { get; }
         public TimeSpan End { get; }
@@ -10,12 +10,11 @@ namespace CalendarLibrary
         {
             get { return End - Start; }
         }
-        public WorkDayBreak(TimeSpan start, TimeSpan end)
+        public WorkDayInterval(TimeSpan start, TimeSpan end)
         {
             Start = start;
             End = end;
         }
-        public WorkDayBreak(TimeSpan start, int minutesDuration) : this(start, start + new TimeSpan(0, minutesDuration, 0)) { }
-
+        public WorkDayInterval(TimeSpan start, int minutesDuration) : this(start, start + new TimeSpan(0, minutesDuration, 0)) { }
     }
 }

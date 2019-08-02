@@ -16,12 +16,12 @@ namespace UnitTests
             #region Inicia Calendário Padrão
             var start = new TimeSpan(8, 0, 0);
             var end = new TimeSpan(17, 0, 0);
-            var bk = new WorkDayBreak(new TimeSpan(12, 0, 0), 60);
-            var monday = new WorkDay(DayOfWeek.Monday, start, end, new List<WorkDayBreak>() { bk });
-            var tuesday = new WorkDay(DayOfWeek.Tuesday, start, end, new List<WorkDayBreak>() { bk });
-            var wednesday = new WorkDay(DayOfWeek.Wednesday, start, end, new List<WorkDayBreak>() { bk });
-            var thursday = new WorkDay(DayOfWeek.Thursday, start, end, new List<WorkDayBreak>() { bk });
-            var friday = new WorkDay(DayOfWeek.Friday, start, end, new List<WorkDayBreak>() { bk });
+            var bk = new WorkDayInterval(new TimeSpan(12, 0, 0), 60);
+            var monday = new WorkDay(DayOfWeek.Monday, start, end, new List<WorkDayInterval>() { bk });
+            var tuesday = new WorkDay(DayOfWeek.Tuesday, start, end, new List<WorkDayInterval>() { bk });
+            var wednesday = new WorkDay(DayOfWeek.Wednesday, start, end, new List<WorkDayInterval>() { bk });
+            var thursday = new WorkDay(DayOfWeek.Thursday, start, end, new List<WorkDayInterval>() { bk });
+            var friday = new WorkDay(DayOfWeek.Friday, start, end, new List<WorkDayInterval>() { bk });
 
             //Feriados
             var diaDaIndependencia = new Holiday(new DateTime(2019, 9, 7));
